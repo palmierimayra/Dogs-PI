@@ -1,0 +1,7 @@
+.div{
+    margin-top: 10mm;
+    border-radius: 15px;
+    display: grid;
+    justify-content: center;
+    background-image: url("https://media.ambito.com/p/c978de701389a319a93c61d8dbfecbc9/adjuntos/239/imagenes/040/169/0040169792/mascotas-perrosjpg.jpg");
+}

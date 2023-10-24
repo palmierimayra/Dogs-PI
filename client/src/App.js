@@ -1,9 +1,13 @@
 import './App.css';
+import Routes from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Dogs</h1>
+      <Nav onSearch={onSearch} />
+      <Routes>
+        <Route path="/" element={<Landing />}></Route>
+     </Routes>
     </div>
   );
 }
