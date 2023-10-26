@@ -21,8 +21,6 @@ const getAllDogs = async (req, res) => {
       };
     });
 
-    await Dog.bulkCreate(dogArray);
-    
     return res.status(200).json(dogArray);
 
   } catch (error) {

@@ -17,7 +17,7 @@ const router = Router();
 router.get("/dogs", getAllDogs);
 router.get("/dogs/name", getDogsByRaza);
 router.get("/dogs/:idRaza", getDogsById);
-//router.post("/dogs", createDogs);
+router.post("/dogs", createDogs);
 router.get("/temperaments", getAllTemperaments);
 
 module.exports = router;
