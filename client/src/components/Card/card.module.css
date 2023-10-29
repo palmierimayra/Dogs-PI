@@ -1,0 +1,40 @@
+.h2 {
+    font-family: Calibri;
+    font-size: 20px;
+    text-align: center;
+    -webkit-text-stroke: 0.5px black;
+    color: black;
+    margin: 2mm;
+  }
+
+.div{
+    margin-top: 10mm;
+    border-radius: 15px;
+    display: flex;
+    width: 270px;
+    height: 380px;
+    flex-direction:column;
+    align-items: center;
+    border: solid black 1mm;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1mm 1mm 3mm 1mm;
+}
+
+.img{
+    margin-top: 0.5mm;
+    border-radius: 90px;
+    border: solid black 0.5mm;
+    height: 200px;
+    width: 260px;
+}
+
+.nameid {
+    background-color: orange;
+    color: black;
+    font-family: Calibri;
+    font-size: 16px;
+    margin-top: -9mm;
+    border-radius: 6px;
+    border: solid black 0.6mm;
+    padding: 1mm;
+}

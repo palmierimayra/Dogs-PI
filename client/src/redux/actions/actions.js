@@ -1,4 +1,15 @@
-import { FILTER, ORDER } from "./types";
+import { FILTER, ORDER, LOAD_DOGS, SET_CURRENT_PAGE } from "./types";
+import axios from 'axios';
+
+export const loadDogs = () => {
+  return async (dispatch) => {
+      const response = await axios.get('http://localhost:3001/dogs');
+      dispatch({
+        type: LOAD_DOGS,
+        payload: response.data,
+      });
+  };
+};
 
 export const filterCards = (temperament) => {
   return {
@@ -13,3 +24,8 @@ export const orderCards = (order) => {
     payload: order,
   };
 };
+
+export const setCurrentPage = (currentPage) => ({
+  type: SET_CURRENT_PAGE,
+  payload: currentPage,
+});

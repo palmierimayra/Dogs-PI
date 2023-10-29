@@ -1,11 +1,20 @@
-import { FILTER, ORDER } from "./actions/types";
+import { FILTER, ORDER, LOAD_DOGS } from "./actions/types";
 
 const initialState = {
   allDogs: [],
+  currentPage: 1,
+  dogsPerPage: 8, 
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+
+    case LOAD_DOGS: {
+      return {
+        ...state,
+        allDogs: payload,
+      };
+    }
 
     case FILTER: {
       const filtroTLista = state.allDogs.filter(
@@ -17,7 +26,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
       };
     }
 
-    case ORDER:
+
+    case ORDER: 
       let dogs = state.allDogs;
       let order = dogs.sort((a, b) => {
         if (payload === "A") {

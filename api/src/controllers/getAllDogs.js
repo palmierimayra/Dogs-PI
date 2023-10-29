@@ -1,6 +1,5 @@
 const URL = `https://api.thedogapi.com/v1/breeds`;
 const axios = require("axios");
-const {Dog} = require('../db');
 
 const getAllDogs = async (req, res) => {
   try {
@@ -9,7 +8,7 @@ const getAllDogs = async (req, res) => {
 
     const dogArray = dogs.map((dog) => {
 
-      const { id, reference_image_id, name, height, weight, life_span } = dog;
+      const { id, reference_image_id, name, height, weight, life_span, temperament } = dog;
 
       return {
         id,
@@ -18,6 +17,7 @@ const getAllDogs = async (req, res) => {
         height: height.metric,
         weight: weight.metric,
         life_span,
+        temperament,
       };
     });
 

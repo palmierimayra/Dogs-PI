@@ -1,0 +1,25 @@
+.divPrin {
+    display:inline-block;
+};
+
+.btn {
+    background-color: rgb(255, 140, 26);
+    color: black;
+    border-radius: 2mm;
+    width: auto;
+    height: auto;
+    padding: 4px 8px 4px 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: calibri;
+};
+
+.paginas {
+    width: 10mm;
+    height: 10mm;
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: calibri;
+};
+
