@@ -3,9 +3,8 @@ import Pagination from "../Pagination/Pagination";
 import styles from "./cards.module.css";
 import { connect, useDispatch } from "react-redux";
 import { useState } from "react";
-import { loadDogs, orderCards, filterCards } from "../../redux/actions/actions";
+import { loadDogs, orderCards } from "../../redux/actions/actions";
 import { useEffect } from "react";
-import axios from "axios";
 
 const Cards = ({ allDogs, loadDogs, dogs }) => {
   const { selectMenu, selectC, divFondo } = styles;
@@ -13,6 +12,7 @@ const Cards = ({ allDogs, loadDogs, dogs }) => {
   const [aux, setAux] = useState(false);
   const [pagina, setPagina] = useState(1);
   const [porPagina, setPorPagina] = useState(8);
+
 
   const maximo = Math.ceil(allDogs.length / porPagina);
 
@@ -38,7 +38,7 @@ if(dogs.length>0) {
     <div>
       <div className={selectMenu}>
         <select className={selectC} onChange={handleOrder}>
-          <option value="" selected disabled>Order</option>
+          <option value="" selected disabled>Raza</option>
           <option value="A">Ascendente</option>
           <option value="D">Descendente</option>
         </select>
@@ -49,7 +49,7 @@ if(dogs.length>0) {
           return (
             <Card
               name={name}
-              image={imagen}
+              image={`https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`}
               temperament={temperament}
               weight={weight.metric}
             />

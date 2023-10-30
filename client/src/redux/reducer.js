@@ -1,7 +1,8 @@
-import { FILTER, ORDER, LOAD_DOGS } from "./actions/types";
+import { FILTER, ORDER, LOAD_DOGS, LOAD_TEMP } from "./actions/types";
 
 const initialState = {
   allDogs: [],
+  allTemp: [],
   currentPage: 1,
   dogsPerPage: 8, 
 };
@@ -13,6 +14,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allDogs: payload,
+      };
+    }
+    case LOAD_TEMP: {
+      return {
+        ...state,
+        allTemp: payload,
       };
     }
 

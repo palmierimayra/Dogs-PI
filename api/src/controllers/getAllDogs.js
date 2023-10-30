@@ -9,19 +9,12 @@ const getAllDogs = async (req, res) => {
     const dogArray = dogs.map((dog) => {
 
       const { id, reference_image_id, name, height, weight, life_span, temperament } = dog;
-
-      const imagen = async () => {
-        const response = await axios(`https://api.thedogapi.com/v1/images/${reference_image_id}`);
-        const {url} = response.data;
-        return url;
-      }
-
       return {
         id,
-        reference_image_id: {imagen},
+        reference_image_id,
         name,
-        height: height,
-        weight: weight,
+        height,
+        weight,
         life_span,
         temperament,
       };
