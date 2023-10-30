@@ -1,12 +1,13 @@
 import Card from "../Card/Card";
+import Pagination from "../Pagination/Pagination";
 import styles from "./cards.module.css";
 import { connect, useDispatch } from "react-redux";
 import { useState } from "react";
 import { loadDogs, orderCards, filterCards } from "../../redux/actions/actions";
 import { useEffect } from "react";
-import Pagination from "../Pagination/Pagination";
+import axios from "axios";
 
-const Cards = ({ allDogs, loadDogs }) => {
+const Cards = ({ allDogs, loadDogs, dogs }) => {
   const { selectMenu, selectC, divFondo } = styles;
   const dispatch = useDispatch();
   const [aux, setAux] = useState(false);
@@ -19,15 +20,17 @@ const Cards = ({ allDogs, loadDogs }) => {
     loadDogs();
   }, [loadDogs]);
 
+let displayDogs = [];
+
+if(dogs.length>0) {
+  displayDogs = dogs;
+} else {
+  displayDogs = allDogs;
+}
+
   const handleOrder = (event) => {
     const order = event.target.value;
     dispatch(orderCards(order));
-    setAux(!aux);
-  };
-
-  const handleFilter = (event) => {
-    const gender = event.target.value;
-    dispatch(filterCards(gender));
     setAux(!aux);
   };
 
@@ -39,19 +42,16 @@ const Cards = ({ allDogs, loadDogs }) => {
           <option value="A">Ascendente</option>
           <option value="D">Descendente</option>
         </select>
-        <select className={selectC} onChange={handleFilter}>
-          <option value="" selected disabled>Temperament</option>
-          <option value="Gay">Gay</option>
-        </select>
       </div>
       <div className={divFondo}>
-        {allDogs.slice((pagina-1)*porPagina, (pagina-1)*porPagina+porPagina).map(({ name, image, temperament, weight }, index) => {
+        {displayDogs.slice((pagina-1)*porPagina, (pagina-1)*porPagina+porPagina).map(({ name, reference_image_id, temperament, weight }, index) => {
+
           return (
             <Card
               name={name}
-              image={image}
+              image={imagen}
               temperament={temperament}
-              weight={weight}
+              weight={weight.metric}
             />
           );
         })}

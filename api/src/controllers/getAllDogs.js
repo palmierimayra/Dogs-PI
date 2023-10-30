@@ -10,12 +10,18 @@ const getAllDogs = async (req, res) => {
 
       const { id, reference_image_id, name, height, weight, life_span, temperament } = dog;
 
+      const imagen = async () => {
+        const response = await axios(`https://api.thedogapi.com/v1/images/${reference_image_id}`);
+        const {url} = response.data;
+        return url;
+      }
+
       return {
         id,
-        image: `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`,
+        reference_image_id: {imagen},
         name,
-        height: height.metric,
-        weight: weight.metric,
+        height: height,
+        weight: weight,
         life_span,
         temperament,
       };

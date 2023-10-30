@@ -11,16 +11,19 @@ export default function Nav(props) {
 
   const { onSearch } = props;
 
-  const { div, nav, btn } = styled;
+  const { div, btn } = styled;
 
   return (
     <div className={div}>
-      <nav className={nav}>
+      <nav>
         <NavLink to="/">
           <button className={btn}>Landing</button>
         </NavLink>
         <NavLink to="/home">
           <button className={btn}>Home</button>
+        </NavLink>
+        <NavLink to="/form">
+          <button className={btn}>Formulario</button>
         </NavLink>
         <SearchBar onSearch={onSearch} />
       </nav>

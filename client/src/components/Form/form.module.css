@@ -1,0 +1,62 @@
+.divPrinc{
+    margin-top: 2mm;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(240, 246, 246);
+    width: 550px;
+    height: auto;
+    align-items: center;
+    border: solid 1mm orange;
+    border-radius: 5mm;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.img {
+    width: 500px;
+    border: solid 0.5mm black;
+    border-radius: 5mm;
+    margin-top: 6mm;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input {
+    border-radius: 2mm;
+    padding: 2mm;
+    border: solid 1mm black;
+    align-items: center;
+    display: inline-block;
+    width: 200px;
+}
+
+.label{
+    font-family: calibri;
+    font-size: 20px;
+    font-weight: bolder;
+    display: block; 
+    margin: left;
+}
+
+.inputDif{
+    border-radius: 2mm;
+    padding: 2mm;
+    border: solid 1mm black;
+    align-items: center;
+    display: inline-block;
+    width: 90px;
+}
+
+.submit{
+    background-color: orange;
+    color: black;
+    border-radius: 2mm;
+    width: 20mm;
+    height: 8mm;
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: Calibri;
+    margin: 2mm;
+}

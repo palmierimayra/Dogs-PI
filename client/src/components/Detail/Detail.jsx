@@ -13,6 +13,7 @@ export default function Detail() {
         if (data.length > 0) {
           const dDog = data[0];
           const dogData = {
+            id: dDog.id,
             name: dDog.name,
             height: dDog.height.metric,
             weight: dDog.weight.metric,
@@ -37,7 +38,7 @@ export default function Detail() {
             <img className={img} src={dog.image} alt={dog.image} />
           </div>
           <div className={datos}>
-            <h1 className={title}>{dog.name.toUpperCase()}</h1>
+            <h1 className={title}>{dog.id} - {dog.name.toUpperCase()}</h1>
             <h2>HEIGHT | {dog.height}</h2>
             <h2>WEIGHT | {dog.weight}</h2>
             <h2>YEARS | {dog.life_span}</h2>

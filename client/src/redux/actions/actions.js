@@ -1,4 +1,4 @@
-import { FILTER, ORDER, LOAD_DOGS, SET_CURRENT_PAGE } from "./types";
+import { FILTER, ORDER, LOAD_DOGS } from "./types";
 import axios from 'axios';
 
 export const loadDogs = () => {
@@ -25,7 +25,3 @@ export const orderCards = (order) => {
   };
 };
 
-export const setCurrentPage = (currentPage) => ({
-  type: SET_CURRENT_PAGE,
-  payload: currentPage,
-});

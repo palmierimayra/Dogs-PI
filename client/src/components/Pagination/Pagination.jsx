@@ -1,7 +1,9 @@
+import styles from "./pagination.module.css";
 import { useState } from 'react';
 
 export default function Pagination ({pagina, setPagina, maximo}) {
 
+    const {btn, divPr, pages, inputP} = styles;
     const [input, setInput] = useState(1);
     
     const previousPage = () => {
@@ -31,11 +33,11 @@ export default function Pagination ({pagina, setPagina, maximo}) {
     };
 
 return (
-    <div>
-        <button onClick={previousPage}>Anterior</button>
-        <input onChange={onChange} onKeyDown={(e) => {onKeyDown(e)}}value={input}/>
-        <p>de {Math.ceil(maximo)}</p>
-        <button onClick={nextPage}>Siguiente</button>
+    <div className={divPr}>
+        <button className={btn} onClick={previousPage}>Anterior</button>
+        <input className={inputP} onChange={onChange} onKeyDown={(e) => {onKeyDown(e)}} value={input}/>
+        <span className={pages}>de {Math.ceil(maximo)}</span>
+        <button className={btn} onClick={nextPage}>Siguiente</button>
     </div>
 )
 };
